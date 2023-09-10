@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | sed 's/\.gif$//' | sort -f
+find . -type f -name "*.gif" -exec bash -c 'echo "${1%.gif}"' _ {} + | sort -f
